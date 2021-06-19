@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  fluentd:
+    image: fluent/fluentd
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
+    volumes:
+      - ${PWD}/fluentd/log:/fluentd/log
+      - ${PWD}/fluentd/fluent.conf:/fluentd/etc/fluent.conf:ro
